@@ -1,6 +1,7 @@
 # IT Visionary Chat Assistant
 
-![IT Visionary Logo](./frontend/images/It_Visionary_logo.png)
+![It_Visionary_logo](https://github.com/user-attachments/assets/c3080ffe-00c3-4244-8486-cdfdf4bf6d6a)
+
 
 An AI-powered IT consulting chatbot leveraging FastAPI backend and Streamlit frontend, containerized with Docker for seamless deployment.
 

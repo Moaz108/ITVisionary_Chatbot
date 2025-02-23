@@ -1,0 +1,10 @@
+google.generativeai
+uuid
+pydantic
+fastapi
+requests
+streamlit
+google.generativeai
+uuid
+pydantic
+uvicorn

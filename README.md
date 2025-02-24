@@ -82,4 +82,4 @@ Access:
 
 **Base URL**: `http://localhost:8000/api`
 ## Development:
-you can check the Swagger UI , put this URL `http://localhost:8000/docs` in your browser 
+you can check the Swagger UI , put this URL `http://localhost:8000/docs` in your browser , after the backed files running .

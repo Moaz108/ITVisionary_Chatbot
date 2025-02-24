@@ -80,31 +80,6 @@ Access:
 | `/api/start`   | POST   | Initialize new chat session  | None                                      | `{"session_id": string, "assistant_response": string}` |
 | `/api/chat`    | POST   | Process user message         | `{"session_id": string, "message": string}` | `{"assistant_response": string, "session_id": string}` |
 
-**Base URL**: `http://localhost:8000/api` (Development)  
-**Authentication**: None (Session-based)
-
-### Example Request/Response
-
-**Starting Session**:
-```bash
-curl -X POST http://localhost:8000/api/start
-```
-
-**Response:**
-`{
-  "session_id": "a6e7a8e1-7c4e-491a-b7c0-8b3a5d9b7f8e",
-  "assistant_response": "👋 Welcome to IT Visionary Solutions! I'm your AI assistant..."
-}`
-
-**Sending Message:**
-`curl -X POST http://localhost:8000/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{
-    "session_id": "a6e7a8e1-7c4e-491a-b7c0-8b3a5d9b7f8e",
-    "message": "How can we improve network security?"
-  }'`
-  **Response:**
-`{
-  "assistant_response": "For network security enhancements, we recommend...",
-  "session_id": "a6e7a8e1-7c4e-491a-b7c0-8b3a5d9b7f8e"
-}`
+**Base URL**: `http://localhost:8000/api`
+## Development:
+you can check the Swagger UI , put this URL `http://localhost:8000/docs` in your browser 

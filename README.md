@@ -24,6 +24,13 @@ An AI-powered IT consulting chatbot leveraging FastAPI backend and Streamlit fro
 ```bash
 git clone https://github.com/Moaz108/ITVisionary_Chatbot.git
 ```
+## How to use it:
+
+
+https://github.com/user-attachments/assets/572f47fd-79a4-4cb4-bf28-756b377608f4
+
+
+
 ## Configuration
 
 Access:

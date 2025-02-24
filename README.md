@@ -27,7 +27,10 @@ git clone https://github.com/Moaz108/ITVisionary_Chatbot.git
 ## How to use it:
 
 
-https://github.com/user-attachments/assets/572f47fd-79a4-4cb4-bf28-756b377608f4
+
+
+https://github.com/user-attachments/assets/0ca23260-6d31-4563-8d34-60bcd4192e9a
+
 
 
 

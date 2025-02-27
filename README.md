@@ -29,7 +29,10 @@ git clone https://github.com/Moaz108/ITVisionary_Chatbot.git
 
 
 
-https://github.com/user-attachments/assets/0ca23260-6d31-4563-8d34-60bcd4192e9a
+
+https://github.com/user-attachments/assets/2458c292-73c9-4ca9-b4bd-6d1a4bfd687d
+
+
 
 
 

@@ -93,3 +93,82 @@ Access:
 **Base URL**: `http://localhost:8000/api`
 ## Development:
 you can check the Swagger UI , put this URL `http://localhost:8000/docs` in your browser , after the backed files running .
+
+
+### 4.Docker setup
+**Backend Configuration (`Dockerfile.backend`)**
+```dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY llm.py .
+COPY main.py .
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+- Base Image: Official Python 3.9 slim image
+- Dependencies: Installs from requirements.txt
+- Port Binding: Exposes API on 0.0.0.0:8000
+
+**Frontend Configuration (`Dockerfile.frontend`)**
+```dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY llm.py .
+COPY main.py .
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+- Image Handling: Embeds logo directly in container
+- Port Configuration: Exposes Streamlit on 0.0.0.0:8501
+  
+**Orchestration (`docker-compose.yml`)**
+```yaml
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    environment:
+      - BACKEND_URL=http://backend:8000
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+```
+- Network Isolation: Dedicated bridge network for secure communication
+- Service Discovery: Frontend accesses backend via DNS name `backend`
+- Port Mapping:
+  - Backend: 8000 → 8000
+  - Frontend: 8501 → 8501
+
+
+**Build & Run**
+```bash
+docker-compose up --build -d
+
+# View logs
+docker-compose logs -f
+```
